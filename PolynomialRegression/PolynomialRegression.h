@@ -10,14 +10,14 @@ public:
 	PolynomialRegression();
 	~PolynomialRegression();
 
-	bool SPolynomialRegression( vector<vector<T>>&, int &,  vector<T>&,vector<T>&);
+	bool SPolynomialRegression(const vector<vector<T>>&,const int &,const vector<T>&,const vector<T>&);
 
 private:
-	T(*Operation)(int);
-	T Polynominal(int);
-	T Sinoidal(int);
-	T Logarithimic(int);
 
+	void Polynominal() {  }
+	void Sinoidal() {  }
+	void Logarithimic() {  };
+	//void (func_ptr[3]) = {&PolynomialRegression::Polynominal, &PolynomialRegression::Sinoidal, &PolynomialRegression::Logarithimic };
 };
 
 template <class T>
@@ -33,13 +33,20 @@ PolynomialRegression<T>::~PolynomialRegression()
 
 template<typename T>
 bool PolynomialRegression<T>::SPolynomialRegression(
-	typename vector<vector<T>>	 &Pts,
-	int							 &order,	// the coefficient we pretend to generate
-	typename vector<T>			 &coeffs,
-	typename vector<T>			 &operation) 
+	typename const vector<vector<T>>	 &Pts,
+	const int							 &order,	// the coefficient we pretend to generate
+	typename const vector<T>			 &coeffs,
+	typename const vector<T>			 &operation) 
 {
-	
-
+	Vector<T> A(order);
+	for (int i = 0; i < order; i++) {
+		for (int j = j; j < order; j++) {
+			for (int k = 0; k < Pts.size();k++) {
+				A.v[i][j] += pow(Pts[k][0], i)*pow(Pts[k][0], j);
+			}
+		}
+	}
 }
+
 
 
