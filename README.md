@@ -1,10 +1,11 @@
 # Polynomial-Regression
-Polynomial Regression - Generalized 
+Polynomial Regression C++ - Generalized
 
 This project pretends to make a performance library which fits a curve by the least squares method.
-It can be use by everyone.
 
-One Paragraph of project description goes here
+templates, cross-platform, x32 and x64
+
+It can be use by everyone and you can also contribute.
 
 ## Getting Started
 
@@ -42,7 +43,7 @@ The tests are put in the main.cpp
 
 ## Deployment
 
-It is cross-platform
+It is cross-platform with templates to ease the way you use
 
 ## Built With
 
