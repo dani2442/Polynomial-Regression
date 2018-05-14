@@ -1,52 +1,65 @@
 #pragma once
-#include "Vector.h"
-#include <stdlib.h>
+
 using namespace std;
 
-template<class T>
 class PolynomialRegression
 {
 public:
 	PolynomialRegression();
 	~PolynomialRegression();
 
-	bool SPolynomialRegression(const vector<vector<T>>&,const int &,const vector<T>&,const vector<T>&);
+	template<class T>
+	static Vector<T> SPolynomialRegression(const vector<vector<T>>&,const int &,const vector<T>&,const vector<T>&);
 
 private:
 
 	void Polynominal() {  }
 	void Sinoidal() {  }
 	void Logarithimic() {  };
-	//void (func_ptr[3]) = {&PolynomialRegression::Polynominal, &PolynomialRegression::Sinoidal, &PolynomialRegression::Logarithimic };
+
+	typedef void (PolynomialRegression::*fptr)();
+	
+public:
+	fptr func[3] = { &PolynomialRegression::Polynominal, &PolynomialRegression::Sinoidal, &PolynomialRegression::Logarithimic };
+
 };
 
-template <class T>
-PolynomialRegression<T>::PolynomialRegression()
+PolynomialRegression::PolynomialRegression()
 {
 }
 
-template <class T>
-PolynomialRegression<T>::~PolynomialRegression()
+PolynomialRegression::~PolynomialRegression()
 {
 }
 
 
-template<typename T>
-bool PolynomialRegression<T>::SPolynomialRegression(
-	typename const vector<vector<T>>	 &Pts,
-	const int							 &order,	// the coefficient we pretend to generate
-	typename const vector<T>			 &coeffs,
-	typename const vector<T>			 &operation) 
+template<class T>
+static Vector<T> PolynomialRegression::SPolynomialRegression(
+	typename const vector<vector<T>>	 &Pts,			// the points we use
+	const int							 &order,		// the coefficient we pretend to generate
+	typename const vector<T>			 &coeffs,		// TODO
+	typename const vector<T>			 &operation)	// TODO
 {
-	Vector<T> A(order);
+	Vector<double> A(order);
 	for (int i = 0; i < order; i++) {
-		for (int j = j; j < order; j++) {
+		for (int j = i; j < order; j++) {
 			for (int k = 0; k < Pts.size();k++) {
 				A.v[i][j] += pow(Pts[k][0], i)*pow(Pts[k][0], j);
 			}
+			A.v[j][i] = A.v[i][j];
 		}
 	}
+
+	Vector<double>C(order,1);
+	for (int i = 0; i < order; i++) {
+		for (int k = 0; k < Pts.size(); k++) {
+
+			C.v[i][0] += (Pts[k][1] * pow(Pts[k][0], i));
+		}
+	}
+
+	A.Inverse();
+	A*=C;
+	return A;
 }
-
-
 

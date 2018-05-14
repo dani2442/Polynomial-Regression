@@ -18,15 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="PolynomialRegression.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="PolynomialRegression.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Vector.h">
+    <ClInclude Include="..\..\Vector2\Vector\Vector.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
