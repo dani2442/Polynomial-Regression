@@ -59,7 +59,7 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Authors
 
-* **Daniel López Montero** - *Initial work* - dani2442](https://github.com/dani2442)
+* **Daniel López Montero** - *Initial work* - [dani2442](https://github.com/dani2442)
 
 See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
 
