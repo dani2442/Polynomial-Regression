@@ -46,7 +46,7 @@ It is cross-platform
 
 ## Built With
 
-* [Visual Studio 2015](http://www.dropwizard.io/1.0.2/docs/) - The IDE used
+* [Visual Studio 2015](https://www.visualstudio.com/) - The IDE used
 
 ## Contributing
 
@@ -54,7 +54,8 @@ Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c6
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+////
+////
 
 ## Authors
 
