@@ -13,7 +13,7 @@ You will see that there is a Vector.h class. This class is in another repository
 
 ### Prerequisites
 
-[This library (Vector.h)](https://github.com/dani2442/Vector/blob/master/Vector/Vector.h)
+[This library - Vector.h](https://github.com/dani2442/Vector/blob/master/Vector/Vector.h)
 
 ```
 Vector.h
